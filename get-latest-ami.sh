@@ -1,4 +1,4 @@
-
+ 
 #!/bin/bash
 
 AMI_ID=$(./get-latest-ami.sh)
