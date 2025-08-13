@@ -1,12 +1,12 @@
 VPC Setup
 2 public and 2 private subnets in ap-south-1a and ap-south-1b respectively, with an Internet Gateway for public subnet access, a NAT Gateway for private subnet internet access, and route tables associated with their respective subnets.
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 EKS v1.28
 Provisions an EKS cluster in private subnets with IAM roles, node group, VPC endpoint for private API access, optional custom AMI via launch template, attached IAM policies, Kubernetes provider using EKS auth token, admin access via AWS user ARN, and ensures secure, private connectivity with automated node bootstrapping.
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Bastion Host
 Create a public bastion host with open SSH (22), HTTP (80), HTTPS (443), and Kubernetes API (6443) ports for internet access, along with a private bastion in a private subnet accessible only via SSH from the public bastion, with tools (kubectl, aws-iam-authenticator, AWS CLI) installed, enabling secure SSH jump from local → public bastion → private bastion to manage the EKS cluster.
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usage Workflow
 SSH from your local machine → Public Bastion Host (public subnet) #ssh -i eks-terraform-key.pem ec2-user@43.205.115.140
 
